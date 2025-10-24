@@ -13,14 +13,23 @@ public class Dolphin extends Aquatiques {
         this.swimmingSpeed = 0f;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() + " - Vitesse de nage : " + swimmingSpeed;
+    public float getSwimmingSpeed() {
+        return swimmingSpeed;
+    }
+
+    public void setSwimmingSpeed(float swimmingSpeed) {
+        this.swimmingSpeed = swimmingSpeed;
     }
 
     @Override
     public void swim() {
-        System.out.println("This dolphin is swimming.");
+        System.out.println("This dolphin is swimming at " + swimmingSpeed + " km/h.");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " - Vitesse de nage : " + swimmingSpeed + " km/h";
     }
 }
+
 

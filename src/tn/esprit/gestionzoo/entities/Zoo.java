@@ -1,6 +1,5 @@
 package tn.esprit.gestionzoo.entities;
 
-
 public class Zoo {
     private static final int NBR_CAGES = 25;
     private Animal[] animals;
@@ -25,8 +24,7 @@ public class Zoo {
             System.out.println("Animal déjà présent : " + animal.getNom());
             return false;
         }
-        animals[nbrAnimaux] = animal;
-        nbrAnimaux++;
+        animals[nbrAnimaux++] = animal;
         return true;
     }
 
@@ -58,8 +56,7 @@ public class Zoo {
         for (int i = index; i < nbrAnimaux - 1; i++) {
             animals[i] = animals[i + 1];
         }
-        animals[nbrAnimaux - 1] = null;
-        nbrAnimaux--;
+        animals[--nbrAnimaux] = null;
         return true;
     }
 
@@ -71,10 +68,42 @@ public class Zoo {
         return (z1.nbrAnimaux >= z2.nbrAnimaux) ? z1 : z2;
     }
 
+    // === Prosit 6: Fonctions pour les animaux aquatiques ===
+    public void makeAquaticsSwim() {
+        for (int i = 0; i < nbrAnimaux; i++) {
+            if (animals[i] instanceof Aquatiques) {
+                ((Aquatiques) animals[i]).swim();
+            }
+        }
+    }
+
+    public float maxPenguinSwimmingDepth() {
+        float max = 0;
+        for (int i = 0; i < nbrAnimaux; i++) {
+            if (animals[i] instanceof Penguin) {
+                float depth = ((Penguin) animals[i]).getSwimmingDepth();
+                if (depth > max) max = depth;
+            }
+        }
+        return max;
+    }
+
+    public void displayNumberOfAquaticsByType() {
+        int dolphins = 0;
+        int penguins = 0;
+        for (int i = 0; i < nbrAnimaux; i++) {
+            if (animals[i] instanceof Dolphin) dolphins++;
+            else if (animals[i] instanceof Penguin) penguins++;
+        }
+        System.out.println("Nombre de dauphins : " + dolphins);
+        System.out.println("Nombre de pingouins : " + penguins);
+    }
+
     @Override
     public String toString() {
         return "Zoo '" + nom + "' avec " + nbrAnimaux + " animaux (max " + NBR_CAGES + ")";
     }
 }
+
 
 

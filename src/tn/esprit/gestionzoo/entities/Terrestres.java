@@ -9,7 +9,7 @@ public class Terrestres extends Animal {
     }
 
     public Terrestres() {
-        super("", 0);
+        super();
         this.nbrLegs = 0;
     }
 
@@ -26,4 +26,5 @@ public class Terrestres extends Animal {
         return super.toString() + " - Nombre de pattes : " + nbrLegs;
     }
 }
+
 

@@ -1,9 +1,8 @@
 package tn.esprit.gestionzoo.entities;
 
-
 public class Animal {
-    private String nom;
-    private int age;
+    protected String nom;
+    protected int age;
 
     public Animal(String nom, int age) {
         if (age < 0) {
@@ -15,6 +14,10 @@ public class Animal {
 
     public Animal(String nom) {
         this(nom, 0);
+    }
+
+    public Animal() {
+        this("", 0);
     }
 
     public String getNom() {
@@ -52,5 +55,6 @@ public class Animal {
         return nom + " (âge : " + age + ")";
     }
 }
+
 
 

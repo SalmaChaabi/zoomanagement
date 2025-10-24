@@ -13,8 +13,22 @@ public class Penguin extends Aquatiques {
         this.swimmingDepth = 0f;
     }
 
+    public float getSwimmingDepth() {
+        return swimmingDepth;
+    }
+
+    public void setSwimmingDepth(float swimmingDepth) {
+        this.swimmingDepth = swimmingDepth;
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("This penguin is swimming at a depth of " + swimmingDepth + " meters.");
+    }
+
     @Override
     public String toString() {
-        return super.toString() + " - Profondeur de nage : " + swimmingDepth;
+        return super.toString() + " - Profondeur de nage : " + swimmingDepth + " m";
     }
 }
+
