@@ -3,12 +3,12 @@ package tn.esprit.gestionzoo.entities;
 public class Penguin extends Aquatiques {
     private float swimmingDepth;
 
-    public Penguin(String nom, int age, String habitat, float swimmingDepth) {
+    public Penguin(String nom, int age, String habitat, float swimmingDepth) throws InvalidAgeException {
         super(nom, age, habitat);
         this.swimmingDepth = swimmingDepth;
     }
 
-    public Penguin() {
+    public Penguin() throws InvalidAgeException {
         super();
         this.swimmingDepth = 0f;
     }
@@ -31,4 +31,3 @@ public class Penguin extends Aquatiques {
         return super.toString() + " - Profondeur de nage : " + swimmingDepth + " m";
     }
 }
-

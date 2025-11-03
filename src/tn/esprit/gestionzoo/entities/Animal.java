@@ -4,19 +4,19 @@ public class Animal {
     protected String nom;
     protected int age;
 
-    public Animal(String nom, int age) {
+    public Animal(String nom, int age) throws InvalidAgeException {
         if (age < 0) {
-            throw new IllegalArgumentException("Âge négatif interdit !");
+            throw new InvalidAgeException("Âge négatif interdit pour l'animal : " + nom);
         }
         this.nom = nom;
         this.age = age;
     }
 
-    public Animal(String nom) {
+    public Animal(String nom) throws InvalidAgeException {
         this(nom, 0);
     }
 
-    public Animal() {
+    public Animal() throws InvalidAgeException {
         this("", 0);
     }
 
@@ -55,6 +55,3 @@ public class Animal {
         return nom + " (âge : " + age + ")";
     }
 }
-
-
-

@@ -1,7 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
 public class Zoo {
-    private static final int NBR_CAGES = 25;
+    private static final int NBR_CAGES = 3;
     private Animal[] animals;
     private int nbrAnimaux;
     private String nom;
@@ -15,17 +15,15 @@ public class Zoo {
         this.nbrAnimaux = 0;
     }
 
-    public boolean addAnimal(Animal animal) {
+    public void addAnimal(Animal animal) throws ZooFullException {
         if (isZooFull()) {
-            System.out.println("Zoo plein ! Impossible d'ajouter " + animal.getNom());
-            return false;
+            throw new ZooFullException("Zoo plein ! Impossible d'ajouter " + animal.getNom());
         }
         if (searchAnimal(animal) != -1) {
             System.out.println("Animal déjà présent : " + animal.getNom());
-            return false;
+            return;
         }
         animals[nbrAnimaux++] = animal;
-        return true;
     }
 
     public void afficherAnimaux() {
@@ -64,11 +62,14 @@ public class Zoo {
         return nbrAnimaux >= NBR_CAGES;
     }
 
+    public int getNbrAnimaux() {
+        return nbrAnimaux;
+    }
+
     public static Zoo comparerZoo(Zoo z1, Zoo z2) {
         return (z1.nbrAnimaux >= z2.nbrAnimaux) ? z1 : z2;
     }
 
-    // === Prosit 6: Fonctions pour les animaux aquatiques ===
     public void makeAquaticsSwim() {
         for (int i = 0; i < nbrAnimaux; i++) {
             if (animals[i] instanceof Aquatiques) {
@@ -104,6 +105,3 @@ public class Zoo {
         return "Zoo '" + nom + "' avec " + nbrAnimaux + " animaux (max " + NBR_CAGES + ")";
     }
 }
-
-
-

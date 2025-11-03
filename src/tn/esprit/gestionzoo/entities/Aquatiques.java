@@ -1,14 +1,14 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Aquatiques extends Animal {
+public abstract class Aquatiques extends Animal {
     protected String habitat;
 
-    public Aquatiques(String nom, int age, String habitat) {
+    public Aquatiques(String nom, int age, String habitat) throws InvalidAgeException {
         super(nom, age);
         this.habitat = habitat;
     }
 
-    public Aquatiques() {
+    public Aquatiques() throws InvalidAgeException {
         super("", 0);
         this.habitat = "";
     }
@@ -30,5 +30,3 @@ public class Aquatiques extends Animal {
         System.out.println("This aquatic animal is swimming.");
     }
 }
-
-

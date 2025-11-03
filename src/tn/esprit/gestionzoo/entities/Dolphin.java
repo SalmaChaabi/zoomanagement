@@ -3,12 +3,12 @@ package tn.esprit.gestionzoo.entities;
 public class Dolphin extends Aquatiques {
     private float swimmingSpeed;
 
-    public Dolphin(String nom, int age, String habitat, float swimmingSpeed) {
+    public Dolphin(String nom, int age, String habitat, float swimmingSpeed) throws InvalidAgeException {
         super(nom, age, habitat);
         this.swimmingSpeed = swimmingSpeed;
     }
 
-    public Dolphin() {
+    public Dolphin() throws InvalidAgeException {
         super();
         this.swimmingSpeed = 0f;
     }
@@ -31,5 +31,3 @@ public class Dolphin extends Aquatiques {
         return super.toString() + " - Vitesse de nage : " + swimmingSpeed + " km/h";
     }
 }
-
-
