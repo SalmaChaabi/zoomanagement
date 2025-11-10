@@ -81,6 +81,26 @@ public class Main {
                     System.out.println("Impossible d'ajouter lion terrestre: " + e.getMessage());
                 }
 
+                // === ➕ Instructions 35 à 38 : Tests des interfaces ===
+                System.out.println("\n=== Test des interfaces Carnivore / Omnivore ===");
+
+                Aquatiques requin = new Aquatiques("Requin", 8, "Océan") {
+                    @Override
+                    public void swim() {
+                        System.out.println("Le requin nage rapidement dans l'océan !");
+                    }
+                };
+
+                Terrestres ours = new Terrestres("Ours", 10, 4);
+
+                // Test des comportements alimentaires
+                requin.eatMeat(Food.MEAT);
+                requin.eatMeat(Food.PLANT);
+
+                ours.eatMeat(Food.MEAT);
+                ours.eatPlant(Food.PLANT);
+                ours.eatPlantAndMeat(Food.BOTH);
+
             } catch (InvalidAgeException e) {
                 System.out.println("Erreur création animal aquatique: " + e.getMessage());
             }
