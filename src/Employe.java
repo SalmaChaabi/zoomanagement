@@ -70,6 +70,12 @@ public class Employe implements Comparable<Employe> {
         return id == employe.id && nom.equals(employe.nom);
     }
 
+    //  MÉTHODE hashCode() À AJOUTER
+    @Override
+    public int hashCode() {
+        return 31 * id + nom.hashCode();
+    }
+
     // Redéfinition de toString
     @Override
     public String toString() {
