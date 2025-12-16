@@ -135,6 +135,61 @@ src/
 
 ---
 
+Prosit 9 – Collections (List, Set, Map)
+
+Objectif : Remplacer les tableaux par des collections plus flexibles.
+
+Contenu :
+
+Remplacement de Animal[] par List<Animal>
+
+Utilisation de ArrayList
+
+Ajout, suppression et recherche d’animaux
+
+Parcours avec for-each
+
+Gestion dynamique de la taille du zoo
+
+Concepts :
+
+Collections Java
+
+List, ArrayList
+
+Généricité (<Animal>)
+
+Avantages des collections vs tableaux
+
+---
+🧩 Prosit 10 – Expressions Lambda et Streams
+
+Objectif : Manipuler les données de façon moderne et efficace.
+
+Contenu :
+
+Utilisation des expressions lambda
+
+Filtrage des animaux (aquatiques, terrestres, carnivores…)
+
+Utilisation de l’API Stream
+
+Calculs (ex : nombre d’animaux, profondeur max, etc.)
+
+Tri des animaux selon des critères (âge, nom…)
+
+Concepts :
+
+Lambda expressions
+
+Stream API
+
+filter, map, forEach, count
+
+Programmation fonctionnelle en Java
+
+---
+
 ## ✅ Conclusion
 Ce projet permet de maîtriser progressivement :
 - La programmation orientée objet en Java
@@ -147,6 +202,7 @@ Il constitue une base solide pour des projets Java plus avancés.
 
 
 www.linkedin.com/in/salma-chaabi-8587b1263
+
 
 
 
